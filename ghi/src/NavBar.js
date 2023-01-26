@@ -16,7 +16,7 @@ function NavBar() {
             style={{
                 backgroundColor: "#efeee8",
                 fontFamily: "Gill Sans, sans-serif",
-                height: "120px",
+                height: "auto",
                 borderBottom: "2px solid black",
             }}>
             <div className="container-fluid">
@@ -44,7 +44,7 @@ function NavBar() {
                                 className="navbar-brand"
                                 to="/albums/new"
                                 style={{ marginRight: "0px" }}>
-                                <Button>New Albums</Button>
+                                <Button>New Releases</Button>
                             </Link>
                             <Link
                                 className="navbar-brand"
@@ -63,6 +63,12 @@ function NavBar() {
                         </>
                     ) : (
                         <>
+                            <Link
+                                className="navbar-brand"
+                                to="/albums/new"
+                                style={{ marginRight: "0px" }}>
+                                <Button>New Releases</Button>
+                            </Link>
                             <Link
                                 className="navbar-brand"
                                 to="/reviews/all"
