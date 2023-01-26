@@ -10,3 +10,7 @@ def get_artist_albums(name: str, repo: SpotifyQueries = Depends()):
 @router.get('/api/albums/{album_id}')
 def get_album_details(album_id: str, repo: SpotifyQueries = Depends()):
     return repo.get_album_details(album_id)
+
+@router.get('/api/browse/new-releases')
+def get_new_albums(repo: SpotifyQueries = Depends()):
+    return repo.get_new_albums()

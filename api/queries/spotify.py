@@ -19,3 +19,7 @@ class SpotifyQueries:
         album_details = sp.album(album_id)
         del album_details["available_markets"]
         return album_details
+
+    def get_new_albums(self):
+        results = sp.new_releases(country="US", limit=20, offset=0)
+        return results
