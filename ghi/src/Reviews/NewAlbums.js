@@ -21,6 +21,7 @@ function NewAlbums() {
 
     useEffect(() => {
         getNewAlbums();
+        console.log(albums);
     }, []);
     return (
         <div className="App" style={{ marginTop: "30px" }}>
@@ -51,6 +52,23 @@ function NewAlbums() {
                                     padding: "0px",
                                     marginBottom: "20px",
                                 }}>
+                                <div>
+                                    <div
+                                        style={{
+                                            fontSize: "15px",
+                                            textAlign: "center",
+                                        }}>
+                                        {album["artists"][0]["name"]}
+                                    </div>
+                                    <div
+                                        style={{
+                                            fontSize: "12px",
+                                            textAlign: "center",
+                                        }}>
+                                        {album["name"]}
+                                    </div>
+                                </div>
+
                                 <AlbumModal
                                     album_id={album.id}
                                     img_url={album.images[0].url}

@@ -1,5 +1,4 @@
 import SearchBar from "./Reviews/Search";
-import NewAlbums from "./Reviews/NewAlbums";
 
 function MainPage() {
     return (
