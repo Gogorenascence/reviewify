@@ -14,82 +14,26 @@ export default function SearchBar() {
     const [albums, setAlbums] = useState([]);
 
     function search() {
-        // fetch(
-        //     `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/artists/${searchInput}`
-        // )
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         let albums_with_dupes = data.items;
-        //         const seen = new Set();
-        //         const uniqueAlbums = albums_with_dupes.filter((album) => {
-        //             const duplicate = seen.has(album.name);
-        //             seen.add(album.name);
-        //             return !duplicate;
-        //         });
-        //         setAlbums(uniqueAlbums);
-        //     });
         fetch(
-            `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/browse/new-releases`
+            `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/artists/${searchInput}`
         )
             .then((response) => response.json())
             .then((data) => {
-                // const seen = new Set();
-
-                setAlbums(data["albums"]["items"]);
-                console.log(data);
+                let albums_with_dupes = data.items;
+                const seen = new Set();
+                const uniqueAlbums = albums_with_dupes.filter((album) => {
+                    const duplicate = seen.has(album.name);
+                    seen.add(album.name);
+                    return !duplicate;
+                });
+                setAlbums(uniqueAlbums);
             });
     }
     function Display() {
         document.getElementById("hide-item1").style.display = "none";
     }
-    console.log(albums);
+    // console.log(albums);
     return (
-        // <div className="App" style={{ marginTop: "30px" }}>
-        //     <Container>
-        //         <InputGroup className="mb-3" size="lg">
-        //             <FormControl
-        //                 placeholder="Search For Artist"
-        //                 type="input"
-        //                 onKeyDown={(event) => {
-        //                     if (event.key === "Enter") {
-        //                         search();
-        //                         Display();
-        //                     }
-        //                 }}
-        //                 onChange={(event) => setSearchInput(event.target.value)}
-        //             />
-        //             <Button
-        //                 onClick={() => {
-        //                     search();
-        //                     Display();
-        //                 }}
-        //                 style={{ border: "2px solid #efeee8" }}>
-        //                 Search
-        //             </Button>
-        //         </InputGroup>
-        //     </Container>
-        //     <Container>
-        //         <Row className="mx-2 row row-cols-4">
-        //             {albums.map((album, i) => {
-        //                 return (
-        //                     <Card
-        //                         key={album.id}
-        //                         variant="primary"
-        //                         style={{
-        //                             padding: "0px",
-        //                             marginBottom: "20px",
-        //                         }}>
-        //                         <AlbumModal
-        //                             album_id={album.id}
-        //                             img_url={album.images[0].url}
-        //                             album_name={album.name}
-        //                         />
-        //                     </Card>
-        //                 );
-        //             })}
-        //         </Row>
-        //     </Container>
-        // </div>
         <div className="App" style={{ marginTop: "30px" }}>
             <Container>
                 <InputGroup className="mb-3" size="lg">

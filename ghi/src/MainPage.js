@@ -1,4 +1,5 @@
 import SearchBar from "./Reviews/Search";
+import NewAlbums from "./Reviews/NewAlbums";
 
 function MainPage() {
     return (
@@ -12,6 +13,7 @@ function MainPage() {
             </div>
             <div>
                 <SearchBar />
+                <NewAlbums />
             </div>
         </div>
     );

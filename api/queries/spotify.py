@@ -21,5 +21,5 @@ class SpotifyQueries:
         return album_details
 
     def get_new_albums(self):
-        results = sp.new_releases(country="US", limit=20, offset=0)
+        results = sp.new_releases(country="US", limit=50, offset=0)
         return results
