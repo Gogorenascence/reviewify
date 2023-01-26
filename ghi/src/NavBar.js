@@ -42,6 +42,12 @@ function NavBar() {
                         <>
                             <Link
                                 className="navbar-brand"
+                                to="/albums/new"
+                                style={{ marginRight: "0px" }}>
+                                <Button>New Albums</Button>
+                            </Link>
+                            <Link
+                                className="navbar-brand"
                                 to="/reviews/all"
                                 style={{ marginRight: "0px" }}>
                                 <button className="btn btn-primary">

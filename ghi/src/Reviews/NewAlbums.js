@@ -1,8 +1,6 @@
 import { Container, Button, Row, Card } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AlbumModal from "./AlbumModal";
-import { Carousel } from "react-bootstrap";
-import Stack from "react-bootstrap";
 
 function NewAlbums() {
     const [albums, setAlbums] = useState([]);
@@ -20,17 +18,12 @@ function NewAlbums() {
                 setAlbums(filtered_albums);
             });
     }
+
+    useEffect(() => {
+        getNewAlbums();
+    }, []);
     return (
         <div className="App" style={{ marginTop: "30px" }}>
-            <Container>
-                <Button
-                    onClick={() => {
-                        getNewAlbums();
-                    }}
-                    style={{ border: "2px solid #efeee8" }}>
-                    Search
-                </Button>
-            </Container>
             {/* <Carousel variant="light" style={{ width: "500px" }}>
                 {albums?.map((album, i) => {
                     return (

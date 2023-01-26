@@ -10,6 +10,7 @@ import "./Styles.css";
 import { useAuthContext } from "./UseToken";
 import { Context } from "./Store";
 import React, { useContext, useEffect } from "react";
+import NewAlbums from "./Reviews/NewAlbums";
 
 function App() {
     const [state, dispatch] = useContext(Context);
@@ -54,6 +55,7 @@ function App() {
                     <Route path="/reviews" element={<SeeReviews />} />
                     <Route path="/reviews/all" element={<AllReviews />} />
                     <Route path="/reviews/user" element={<UserReviews />} />
+                    <Route path="/albums/new" element={<NewAlbums />} />
                 </Routes>
             </div>
         </>

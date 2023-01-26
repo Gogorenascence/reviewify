@@ -13,7 +13,6 @@ function MainPage() {
             </div>
             <div>
                 <SearchBar />
-                <NewAlbums />
             </div>
         </div>
     );
