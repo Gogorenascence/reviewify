@@ -23,3 +23,10 @@ class SpotifyQueries:
     def related_artists(self, artist_id: str):
         results = sp.artist_related_artists(artist_id)
         return results
+
+    def get_artist_albums_by_genre(self,  genre: str, name: str):
+        artist = sp.search(name, type="artist")
+        genre = sp.search
+        artist_id = filter(artist, genre)
+        artist_albums = sp.artist_albums(artist_id, limit = 50, country = "US", album_type = "album")
+        return artist_albums
