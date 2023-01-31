@@ -8,10 +8,6 @@ import { Button, ToggleButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DarkMode from "./Theme";
 
-const swapTheme = (newThemeName) => {
-  document.getElementById('app').className = newThemeName;
-}
-
 function NavBar() {
     const [state] = useContext(Context);
 

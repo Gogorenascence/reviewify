@@ -3,6 +3,7 @@
   --Accent-2: #efeee8;
   --Accent-3: #000000;
   --Accent-4: #332f2f;
+  --Logo: url(./images/logo-512.png)
 }
 
 .dark {
@@ -23,8 +24,9 @@
   display: none;
 }
 
-#light-logo {
-  display: none;
+#main-logo {
+  display: url(./images/logo-512.png);
+  height: 256px;
 }
 
 .btn-primary {

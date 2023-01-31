@@ -1,20 +1,14 @@
 import SearchBar from "./Reviews/Search";
+import logo from "./images/logo-512.png";
 
 function MainPage() {
     return (
         <div>
-            <div className="logo-container" id="dark-logo">
+            <div className="logo-container" id="main-logo">
                 <img
-                    src={require("./images/logo-512.png")}
+                    src={logo}
                     height="256"
-                    alt="Reviewify Logo Dark"
-                />
-            </div>
-            <div className="logo-container" id="light-logo">
-                <img
-                    src={require("./images/light-logo-512.png")}
-                    height="256"
-                    alt="Reviewify Logo Light"
+                    alt="Reviewify Logo"
                 />
             </div>
             <div>
