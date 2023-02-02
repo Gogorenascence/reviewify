@@ -4,7 +4,7 @@ import LoginModal from "./Accounts/LoginModal";
 import Logout from "./Accounts/Logout";
 import { Context } from "./Store";
 import React, { useContext, useState } from "react";
-import { Button, ToggleButton } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DarkMode from "./Theme";
 

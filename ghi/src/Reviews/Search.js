@@ -31,6 +31,7 @@ export default function SearchBar() {
   }
   function Display() {
     document.getElementById("main-logo").style.display = "none";
+    document.getElementById("main-logo-light").style.display = "none";
   }
 
     return (
