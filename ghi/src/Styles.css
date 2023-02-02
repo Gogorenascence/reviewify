@@ -3,7 +3,6 @@
   --Accent-2: #efeee8;
   --Accent-3: #000000;
   --Accent-4: #332f2f;
-  --Logo: url(./images/logo-512.png)
 }
 
 .dark {
@@ -18,15 +17,6 @@
   --Accent-2: #000000;
   --Accent-3: #efeee8;
   --Accent-4: #efeee8;
-}
-
-#dark-nav-logo {
-  display: none;
-}
-
-#main-logo {
-  display: url(./images/logo-512.png);
-  height: 256px;
 }
 
 .btn-primary {

@@ -10,10 +10,16 @@ import DarkMode from "./Theme";
 
 function NavBar() {
     const [state] = useContext(Context);
+    let theme;
+
+    if (localStorage) {
+        theme = localStorage.getItem("theme");
+    }
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark">
             <div className="container-fluid">
+                {theme=="dark" ?(
                 <NavLink className="navbar-brand" to="/">
                     <img
                         id="light-nav-logo"
@@ -26,9 +32,25 @@ function NavBar() {
                         src={require("./images/dark-reviewify-png.png")}
                         alt="Music Reviewify Logo"
                         height={110}
-                    />
+                        style={{display: 'none'}}
+                        />
                 </NavLink>
-
+                    ):(
+                <NavLink className="navbar-brand" to="/">
+                    <img
+                        id="light-nav-logo"
+                        src={require("./images/output-onlinepngtools.png")}
+                        alt="Music Reviewify Logo"
+                        height={110}
+                        style={{display: 'none'}}
+                    />
+                    <img
+                        id="dark-nav-logo"
+                        src={require("./images/dark-reviewify-png.png")}
+                        alt="Music Reviewify Logo"
+                        height={110}
+                        />
+                </NavLink>)}
                 <DarkMode/>
                 <div>
                     {state.currentAccount["id"] ? (

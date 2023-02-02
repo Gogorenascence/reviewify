@@ -30,8 +30,7 @@ export default function SearchBar() {
       });
   }
   function Display() {
-    document.getElementById("dark-logo").style.display = "none";
-    document.getElementById("light-logo").style.display = "none";
+    document.getElementById("main-logo").style.display = "none";
   }
 
     return (
