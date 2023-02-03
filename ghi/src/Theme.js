@@ -24,8 +24,6 @@ const DarkMode = () => {
 
     const switchTheme = (e) => {
         if (theme === darkTheme) {
-            document.getElementById("main-logo").style.display = "none";
-            document.getElementById("main-logo-light").style.display = "flex";
             document.getElementById("dark-nav-logo").style.display = "flex";
             document.getElementById("light-nav-logo").style.display = "none";
             body.classList.replace(darkTheme, lightTheme);
@@ -33,8 +31,6 @@ const DarkMode = () => {
             localStorage.setItem("theme", "light");
             theme = lightTheme;
         } else {
-            document.getElementById("main-logo").style.display = "flex";
-            document.getElementById("main-logo-light").style.display = "none";
             document.getElementById("dark-nav-logo").style.display = "none";
             document.getElementById("light-nav-logo").style.display = "flex";
             body.classList.replace(lightTheme, darkTheme);
