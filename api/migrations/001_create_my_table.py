@@ -3,9 +3,9 @@ steps = [
         """
         CREATE TABLE accounts (
             id SERIAL PRIMARY KEY NOT NULL,
-            email VARCHAR(200) NOT NULL,
+            email VARCHAR(200) NOT NULL UNIQUE,
             hashed_password VARCHAR(200) NOT NULL,
-            username VARCHAR(250) NOT NULL
+            username VARCHAR(250) NOT NULL UNIQUE
         );
         """,
         """

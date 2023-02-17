@@ -2,28 +2,19 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import ReviewModal from "./ReviewModal";
+import { useGetReviewsQuery } from "../store/reviewsApi";
+import { Spinner } from "react-bootstrap";
 
 function SeeReviews(props) {
+    const { data, error, isLoading } = useGetReviewsQuery();
     const location = useLocation();
     const album_id = location.state["id"];
     const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/`)
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Cannot load review data");
-            })
-            .then((response) =>
-                setReviews(
-                    response.reviews.filter(
-                        (review) => review.album_id === album_id
-                    )
-                )
-            );
-    }, []);
+    let content
+
+    if (isLoading) {
+        content = <Spinner
 
     return (
         <>
