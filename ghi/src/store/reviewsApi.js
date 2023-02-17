@@ -7,9 +7,9 @@ export const reviewsApi = createApi({
     }),
     endpoints: builder => ({
         getReviews: builder.query({
-            query: () => 'api/reviews/'
-        })
-    })
-})
+            query: () => '/api/reviews/',
+        }),
+    }),
+});
 
-export const { useGetReviewsQuery } = reviewsApi
+export const { useGetReviewsQuery } = reviewsApi;

@@ -1,20 +1,23 @@
-import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import ReviewModal from "./ReviewModal";
 import { useGetReviewsQuery } from "../store/reviewsApi";
 import { Spinner } from "react-bootstrap";
+import { useState } from "react";
 
 function SeeReviews(props) {
     const { data, error, isLoading } = useGetReviewsQuery();
     const location = useLocation();
     const album_id = location.state["id"];
-    const [reviews, setReviews] = useState([]);
+    const [reviews, setReviews] = useState('');
 
     let content
 
     if (isLoading) {
-        content = <Spinner
+        content = <Spinner text="Loading..." />;
+
+    }
+
+    setReviews(data.reviews.filter((review) => review.album_id === album_id))
 
     return (
         <>

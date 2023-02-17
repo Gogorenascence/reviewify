@@ -2,13 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { Store } from "./Store";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 import AuthProviderContainer from "./AuthProviderContainer";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <Store>
-            <AuthProviderContainer />
-        </Store>
+        <Provider store={store}>
+            <Store>
+                <AuthProviderContainer />
+            </Store>
+        </Provider>
     </React.StrictMode>
 );
 

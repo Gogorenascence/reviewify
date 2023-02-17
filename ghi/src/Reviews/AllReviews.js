@@ -1,26 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { useGetReviewsQuery } from "../store/reviewsApi";
+import { Spinner } from 'react-bootstrap'
 
 function AllReviews() {
-    const [reviews, setReviews] = useState([]);
+    const { data, error, isLoading } = useGetReviewsQuery();
 
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/`)
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Cannot load review data");
-            })
-            .then((response) => setReviews(response.reviews));
-    }, []);
+    console.log(data);
 
     return (
         <>
             <div className="App"></div>
             <Container>
                 <div className="row justify-content-center">
-                    {reviews.map((review) => {
+                    {data.reviews.map((review) => {
                         return (
                             <div
                                 key={review.id}
