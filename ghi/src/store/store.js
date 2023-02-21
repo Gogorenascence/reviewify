@@ -6,9 +6,9 @@ export const store =configureStore({
     reducer: {
         [reviewsApi.reducerPath]: reviewsApi.reducer,
     },
-    middleware: getDefaultMiddleware =>
-        getDefaultMiddleware()
-            .concat(reviewsApi.middleware)
+    middleware: getDefaultMiddleware => {
+        return getDefaultMiddleware().concat(reviewsApi.middleware)
+},
 });
 
 setupListeners(store.dispatch);

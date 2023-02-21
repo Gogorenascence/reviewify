@@ -9,11 +9,11 @@ import AuthProviderContainer from "./AuthProviderContainer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <Store>
+        <Store>
+            <Provider store={store}>
                 <AuthProviderContainer />
-            </Store>
-        </Provider>
+            </Provider>
+        </Store>
     </React.StrictMode>
 );
 
